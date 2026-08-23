@@ -3,6 +3,16 @@
 import { createDoctor, getAvailableDoctors, getDoctors, updateDoctor } from "../lib/actions/doctors";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
+export interface AvailableDoctor {
+  id: string;
+  name: string;
+  specialty: string;
+  bio: string | null;
+  imageUrl: string;
+  phone: string;
+  appointmentCount: number;
+}
+
 export function useGetDoctors() {
   const result = useQuery<any>({
     queryKey: ["getDoctors"],
@@ -41,7 +51,7 @@ export function useUpdateDoctor() {
 
 // get available doctors for appointments
 export function useAvailableDoctors() {
-  const result = useQuery<any>({
+  const result = useQuery<AvailableDoctor[]>({
     queryKey: ["getAvailableDoctors"],
     queryFn: getAvailableDoctors,
   });
