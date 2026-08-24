@@ -16,13 +16,10 @@ export async function POST(request: Request) {
       price,
     } = body;
 
-    // validate required fields
     if (!userEmail || !doctorName || !appointmentDate || !appointmentTime) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // send the email
-    // do not use this in prod, only for testing purposes
     const { data, error } = await resend.emails.send({
       from: "Opticare <no-reply@resend.dev>",
       to: [userEmail],
