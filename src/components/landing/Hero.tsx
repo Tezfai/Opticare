@@ -54,10 +54,23 @@ export function Hero() {
               {/* CTA BUTTONS */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <SignUpButton mode="modal">
-                  <Button size="lg"><MicIcon className="mr-2 size-5" />Try Voice Agent </Button>
+                  <Button
+                    size="lg"
+                    className="rounded-full bg-primary px-6 text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30"
+                  >
+                    <MicIcon className="size-5" />
+                    Try Voice Agent
+                  </Button>
                 </SignUpButton>
                 <SignUpButton mode="modal">
-                  <Button size="lg" variant={"outline"}><Calendar1Icon className="mr-2 size-5" />Book Appointment </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full border-primary/30 bg-background/60 px-6 shadow-sm backdrop-blur-sm hover:border-primary/60 hover:bg-primary/10 hover:text-foreground"
+                  >
+                    <Calendar1Icon className="size-5" />
+                    Book Appointment
+                  </Button>
                 </SignUpButton>
               </div>
             </div>

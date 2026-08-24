@@ -49,7 +49,14 @@ async function ProPage() {
             </p>
           </div>
 
-          <PricingTable />
+          <PricingTable
+            appearance={{
+              variables: {
+                colorPrimary: "#7033ff",
+                colorPrimaryForeground: "#ffffff",
+              },
+            }}
+          />
         </div>
       </div>
     </>

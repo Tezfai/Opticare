@@ -39,12 +39,19 @@ export function Header() {
         </div>
         <div className="flex items-center gap-3">
             <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="rounded-full px-4 hover:bg-primary/10 hover:text-primary"
+              >
                 Sign In
               </Button>
             </SignInButton>
             <SignUpButton mode="modal">
-              <Button variant="ghost" size="sm">
+              <Button
+                size="sm"
+                className="rounded-full bg-primary px-4 text-primary-foreground shadow-md shadow-primary/20 hover:bg-primary/90"
+              >
                 Sign Up
               </Button>
             </SignUpButton>
