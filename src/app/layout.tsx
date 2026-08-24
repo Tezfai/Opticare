@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
-import UserSync from "@/components/UserSync";
+import { ClerkProvider } from "@clerk/nextjs";
+//import UserSync from "@/components/UserSync";
 import TanStackProvider from "@/components/providers/TanStackProvider";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-title: "Opticare AI – AI Powered Eye Care Assistant",
-description: "Get instant eye care guidance and vision support through voice calls with our AI assistant",
-
+  title: "DentWise - AI Powered Dental Assistant",
+  description:
+    "Get instant dental advice through voice calls with our AI assistant. Avaiable 24/7.",
 };
 
 export default function RootLayout({
@@ -35,28 +29,26 @@ export default function RootLayout({
 }>) {
   return (
     <TanStackProvider>
-    <ClerkProvider
-     appearance={{
-      variables: {
-        colorPrimary: "#4f46e5",
-        colorText: "#111827",
-        colorBackground: "#f9fafb",
-        colorInputBackground: "#ffffff",
-        
-      },
-      elements: {
-        card: "rounded-lg shadow-md border border-gray-200",
-      },
-    }}
+      <ClerkProvider
+        appearance={{
+          variables: {
+            colorPrimary: "#e78a53",
+            colorBackground: "#f3f4f6",
+            colorText: "#111827",
+            colorTextSecondary: "#6b7280",
+            colorInputBackground: "#f3f4f6",
+          },
+        }}
       >
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>
-        <UserSync />
-        {children}
-      </body>
-    </html>
-    </ClerkProvider>
+        <html lang="en">
+          <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>
+            
+            {/* <UserSync /> */}
+            <Toaster />
+            {children}
+          </body>
+        </html>
+      </ClerkProvider>
     </TanStackProvider>
   );
 }
-//g
