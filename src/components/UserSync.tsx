@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 function UserSync() {
   const { isSignedIn, isLoaded } = useUser();
-
+// Sync user data with the backend when the user is signed in and loaded
   useEffect(() => {
     const handleUserSync = async () => {
       if (isLoaded && isSignedIn) {
