@@ -1,20 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* config options here */
   images: {
-    // Allow loading doctor avatars from the Liara avatar host used in production/dev.
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
         hostname: "avatar.iran.liara.run",
-        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "img.clerk.com",
-        pathname: "/**",
       },
     ],
+    unoptimized: true,
   },
 };
 
