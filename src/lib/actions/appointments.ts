@@ -11,6 +11,7 @@ function transformAppointment(appointment: any) {
     patientEmail: appointment.user.email,
     doctorName: appointment.doctor.name,
     doctorImageUrl: appointment.doctor.imageUrl || "",
+    doctorGender: appointment.doctor.gender,
     date: appointment.date.toISOString().split("T")[0],
   };
 }
@@ -26,7 +27,7 @@ export async function getAppointments() {
             email: true,
           },
         },
-        doctor: { select: { name: true, imageUrl: true } },
+        doctor: { select: { name: true, imageUrl: true, gender: true } },
       },
       orderBy: { createdAt: "desc" },
     });
@@ -52,7 +53,7 @@ export async function getUserAppointments() {
       where: { userId: user.id },
       include: {
         user: { select: { firstName: true, lastName: true, email: true } },
-        doctor: { select: { name: true, imageUrl: true } },
+        doctor: { select: { name: true, imageUrl: true, gender: true } },
       },
       orderBy: [{ date: "asc" }, { time: "asc" }],
     });
@@ -152,7 +153,7 @@ export async function bookAppointment(input: BookAppointmentInput) {
             email: true,
           },
         },
-        doctor: { select: { name: true, imageUrl: true } },
+        doctor: { select: { name: true, imageUrl: true, gender: true } },
       },
     });
 

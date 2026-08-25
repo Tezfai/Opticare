@@ -1,9 +1,16 @@
 import AppointmentConfirmationEmail from "@/components/emails/AppointmentConfirmationEmail";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import resend from "@/lib/resend";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
+    const { userId } = await auth();
+    if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+    const user = await currentUser();
+    const userEmails = user?.emailAddresses.map(({ emailAddress }) => emailAddress.toLowerCase()) ?? [];
+
     const body = await request.json();
 
     const {
@@ -16,7 +23,13 @@ export async function POST(request: Request) {
       price,
     } = body;
 
-    if (!userEmail || !doctorName || !appointmentDate || !appointmentTime) {
+    if (
+      !userEmail ||
+      !userEmails.includes(String(userEmail).toLowerCase()) ||
+      !doctorName ||
+      !appointmentDate ||
+      !appointmentTime
+    ) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 

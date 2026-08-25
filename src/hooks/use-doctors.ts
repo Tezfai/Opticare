@@ -10,6 +10,7 @@ export interface AvailableDoctor {
   bio: string | null;
   imageUrl: string;
   phone: string;
+  gender: "MALE" | "FEMALE";
   appointmentCount: number;
 }
 

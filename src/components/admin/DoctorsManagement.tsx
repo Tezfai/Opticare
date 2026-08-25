@@ -58,7 +58,11 @@ function DoctorsManagement() {
               >
                 <div className="flex items-center gap-4">
                   <Image
-                    src={doctor.imageUrl || "/avatar-placeholder.svg"}
+                    src={
+                      doctor.gender === "FEMALE"
+                        ? "/doctor-female-default.svg"
+                        : "/doctor-male-default.svg"
+                    }
                     alt={doctor.name || "Doctor avatar"}
                     width={48}
                     height={48}

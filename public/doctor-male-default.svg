@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Default male doctor avatar">
+  <rect width="96" height="96" rx="48" fill="#dbeafe"/>
+  <circle cx="48" cy="36" r="17" fill="#f1c7a5"/>
+  <path d="M31 35c1-16 9-24 18-24 12 0 18 9 18 24-5-5-10-8-17-8-7 0-13 3-19 8Z" fill="#334155"/>
+  <path d="M23 86c2-20 11-30 25-30s23 10 25 30Z" fill="#2563eb"/>
+  <path d="M42 57h12l-6 10Z" fill="#fff"/>
+  <path d="M38 38h-5M63 38h-5" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+</svg>

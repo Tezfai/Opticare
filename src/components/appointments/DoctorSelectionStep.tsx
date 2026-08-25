@@ -43,7 +43,11 @@ function DoctorSelectionStep({
             <CardHeader className="pb-4">
               <div className="flex items-start gap-4">
                 <Image
-                  src={doctor.imageUrl || "/logo6.png"}
+                  src={
+                    doctor.gender === "FEMALE"
+                      ? "/doctor-female-default.svg"
+                      : "/doctor-male-default.svg"
+                  }
                   alt={doctor.name}
                   width={64}
                   height={64}
