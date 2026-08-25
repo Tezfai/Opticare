@@ -1,5 +1,9 @@
 # Opticare AI
 
+
+- Live Link (https://opticare-ai-osg0l.sevalla.app/)
+
+
 Opticare AI is an eye-care appointment platform built with Next.js. Patients can browse available providers, book appointments, view upcoming appointments, and use an AI voice assistant. Administrators can manage doctors and monitor appointments from a protected dashboard.
 
 ## Features
