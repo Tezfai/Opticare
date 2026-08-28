@@ -139,10 +139,12 @@ npm ci
 npm run build
 ```
 
-## Security Notes
+## ADMIN page screenshots
 
-- Never commit `.env` or expose its contents in screenshots or logs.
-- Rotate Clerk, database, Vapi, and Resend credentials if they have been exposed.
-- Use test credentials locally and production credentials only in the deployment platform.
-- Keep admin access restricted to trusted accounts.
-- Use fake data for public demonstrations.
+<img width="1403" height="1194" alt="image" src="https://github.com/user-attachments/assets/5f79b2c5-04e0-419e-8891-35914e296ec7" />
+<img width="494" height="496" alt="image" src="https://github.com/user-attachments/assets/23d8b10c-4acb-44f3-b102-a9cb262c7fe4" />
+<img width="480" height="536" alt="image" src="https://github.com/user-attachments/assets/08646b77-38cd-4f6c-be30-b0b8ac1a9b4b" />
+
+
+
+
