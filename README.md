@@ -140,7 +140,7 @@ npm run build
 ```
 
 ## ADMIN page screenshots
-you can access the admin page by setting your useremail as the admin email in .env 
+you can access the admin page by setting your useremail as the admin email in .env (cannot be accsesed unless admin perms are granted)
 <img width="1403" height="1194" alt="image" src="https://github.com/user-attachments/assets/5f79b2c5-04e0-419e-8891-35914e296ec7" />
 <img width="494" height="496" alt="image" src="https://github.com/user-attachments/assets/23d8b10c-4acb-44f3-b102-a9cb262c7fe4" />
 <img width="480" height="536" alt="image" src="https://github.com/user-attachments/assets/08646b77-38cd-4f6c-be30-b0b8ac1a9b4b" />
